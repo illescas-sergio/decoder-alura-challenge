@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>Alura challenge</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="./imagenes/Vector.png" alt="logo Alura">
+    </header>
+    <section class="data-input">
+        <textarea id="input-textarea" name="" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+        <div class="data-button">
+            <div class="flex-buttons">
+                <button id="btEnc" class="data-button-encript">Encriptar</button>
+                <button id="btDec" class="data-button-deencript">Desencriptar</button>
+            </div>
+        </div>
+
+    </section>
+    <section class="data-output">
+        <div id="results-area" class="results-area">
+            <div id="results-img" class="results-image">
+                <img src="./imagenes/Muñeco.png" alt="personaje buscando">
+            </div>
+            <div id="textarea-results">
+                
+
+            </div>
+    
+            <div id="results-footer" class="results-text">
+                <h5 id="results-footer-h5">Ningún mensaje fue encontrado</h5>
+                <p id="results-footer-p">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <div id="forCopyButton"></div>
+        </div>
+        
+      
+    </section>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
