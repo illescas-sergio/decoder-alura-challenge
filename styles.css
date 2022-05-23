@@ -85,6 +85,7 @@ header {
     border-radius: 32px;
     
 }
+/*De Acá para arriba está todo OK*/
 
 .data-output {
     border: 2px solid blue;
@@ -96,6 +97,7 @@ header {
     border-radius: 32px;
 }
 
+/*Revisar de acá para abajo!!*/
 .results-area {
     display: flex;
     flex-direction: column;
@@ -115,15 +117,31 @@ header {
 }
 
 .results-image {
+    /*Esta es la clase del DIV de la imagen "muñeco"*/
     height: 304px;
     width: 336px;
     border: 1px solid black;
     margin: 0 auto;
+    
 }
-
+/* Esta es la imagen */
 .results-image img {
     width: 100%;
 }
+
+.hide {
+    display: none;
+}
+
+
+.presioneButton {
+    color: #343A40;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center; 
+}
+
 
 #textarea-results {
     width: 336px;
@@ -135,6 +153,7 @@ header {
     text-align: center;
     width: 336px;
     margin: auto;
+    border: 1px solid aqua;
 }
 
 .results-text h5 {
@@ -153,7 +172,7 @@ header {
     text-align: center;
 }
 
-.buttonContainer {
+/* .buttonContainer {
 
     display: flex;
     flex-direction: column;
@@ -163,25 +182,27 @@ header {
     border: 2px solid green;
     align-content: flex-end;
 
-}
+} */
 
 .copy-button {
     margin: auto auto 32px auto;
 }
-
+/*ok*/
 #forCopyButton {
     display: flex;
     min-height: 20px;
     width: 100%;
     border: 1px solid red;
+    visibility: hidden;
 }
 
 .forOutputText{
     color: #343A40;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 32px;
     line-height: 120%;
     text-align: center;
     border: none;
+    word-wrap: break-word;
 }
 
