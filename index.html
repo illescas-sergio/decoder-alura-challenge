@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +9,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <title>Alura challenge</title>
+    <title>Alura challenge - Encriptador</title>
 </head>
 <body>
-    <header>
-        <img class="logo" src="./imagenes/Vector.png" alt="logo Alura">
-    </header>
-    <section class="data-input">
-        <textarea id="input-textarea" name="" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
-        <div class="data-button">
-            <div class="flex-buttons">
-                <button id="btEnc" class="data-button-encript">Encriptar</button>
-                <button id="btDec" class="data-button-deencript">Desencriptar</button>
-            </div>
-        </div>
+    <div class="container">
+        <div class="input">
+            <header>
+                <img class="logo" src="./imagenes/Vector.png" alt="logo Alura">
+            </header>
 
-    </section>
-    <section class="data-output">
-        <div id="results-area" class="results-area">
-            <div id="results-img" class="results-image">
-                <img class="img-muneco" src="./imagenes/Muñeco.png" alt="personaje buscando">
-                <h5 class="presioneButton hide">Presione el botón para Encriptar o Desencriptar</h5>
-            </div>
-            <div id="textarea-results">
+            <section class="data-input">
+                <textarea id="input-textarea" name="" cols="30" rows="30" placeholder="Ingrese el texto aquí"></textarea>
+            </section>
+            
+            <div class="sub-input">
+                <div class="flex-buttons">
+                    <button id="btEnc" class="data-button-encript">Encriptar</button>
+                    <button id="btDec" class="data-button-deencript">Desencriptar</button>
+                </div>
                 
+                <div class="footer">
+                    <p class="copyright">Sergio Illescas - 2022</p>
+                </div>
 
-            </div>
-    
-            <div id="results-footer" class="results-text">
-                <h5 id="results-footer-h5">Ningún mensaje fue encontrado</h5>
-                <p id="results-footer-p">Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
-            <div id="forCopyButton">
-                <button id="copyButton" class="data-button-deencript copy-button">Copiar</button>
-            </div>
+            </div> 
+
         </div>
+
+        <div class="output">
+            <section class="data-output">
+                <div id="results-area" class="results-area">
+                    <div id="results-img" class="results-image">
+                        <img class="img-muneco" src="./imagenes/Muñeco.png" alt="personaje buscando">
+                        <h5 class="presioneButton hide">Presione el botón para Encriptar o Desencriptar</h5>
+                    </div>
+
+                    <div id="textarea-results">
+                        
         
-      
-    </section>
+                    </div>
+            
+                    <div id="results-footer" class="results-text">
+                        <h5 id="results-footer-h5">Ningún mensaje fue encontrado</h5>
+                        <p id="results-footer-p">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+
+                    <div id="forCopyButton">
+                        <button id="copyButton" class="data-button-deencript copy-button">Copiar</button>
+                    </div>
+
+                </div>
+
+            </section> 
+
+        </div>
+
+    </div>   
 
     <script src="./script.js"></script>
     

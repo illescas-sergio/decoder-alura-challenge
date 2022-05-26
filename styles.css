@@ -6,41 +6,50 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: row;
     width: 1440px;
     height: 1024px;
     background: #F3F5FC;
     margin: 40px auto;
 }
 
-header {
-    display: inline-block;
-    height: 80px;
-    width: 80px;
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.output{
+    display: flex;
+    flex-direction: column;
 }
 
 .logo {
-
     margin-top: 40px;
     margin-left: 84px;
     height: 48px;
 }
 
-.data-input {
+.sub-input {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    /* border: 2px solid red; */
-    width: 836px;
-    margin:168px 80px 40px 84px;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.data-input {
+    margin:168px 80px 40px 160px;
 }
 
 #input-textarea {
     border: none;
-    width: 577px;
-    height: 48px;
-    vertical-align: center;
+    width: 80%;
+    min-height: 48px;
+    max-height: 300px;
     background: #F3F5FC;
     color: #0A3871;
     font-size: 32px;
@@ -53,17 +62,11 @@ header {
     line-height: 48px;
 }
 
-.data-button {
-    display: block;  
-}
-
 .flex-buttons {
     display: flex;
-    /* border: 2px solid green; */
-    justify-content: space-between;
-    margin-bottom: 32px;    
-}
-
+    justify-content: center;
+    margin-bottom: 32px;
+} 
 
 .data-button-encript {
     width: 328px;
@@ -73,7 +76,7 @@ header {
     background: #0A3871;
     border-color: #0A3871;
     border-radius: 32px;
-    
+    margin-right: 12px;    
 }
 
 .data-button-deencript {
@@ -83,27 +86,25 @@ header {
     background: #D8DFE8;
     border: 1px solid #0A3871;
     border-radius: 32px;
+    margin-left: 12px;
     
 }
-/*De Acá para arriba está todo OK*/
 
 .data-output {
-    border: 2px solid blue;
     display: flex;
     flex-direction: column;
     margin: 40px 40px 40px auto;
+    height: 940px;
     width: 400px;
     background: white;
     border-radius: 32px;
 }
 
-/*Revisar de acá para abajo!!*/
 .results-area {
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    border: 1px solid orange;
     margin: 243px auto auto auto;
 }
 
@@ -112,19 +113,16 @@ header {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    border: 1px solid orange;
     margin: 32px auto auto auto;
+    justify-content: space-between;
 }
 
-.results-image {
-    /*Esta es la clase del DIV de la imagen "muñeco"*/
+.results-image {    
     height: 304px;
     width: 336px;
-    border: 1px solid black;
     margin: 0 auto;
-    
 }
-/* Esta es la imagen */
+
 .results-image img {
     width: 100%;
 }
@@ -132,7 +130,6 @@ header {
 .hide {
     display: none;
 }
-
 
 .presioneButton {
     color: #343A40;
@@ -142,18 +139,15 @@ header {
     text-align: center; 
 }
 
-
 #textarea-results {
     width: 336px;
     margin: 32px auto;
-    border-color: red;
 }
 
 .results-text {
     text-align: center;
     width: 336px;
     margin: auto;
-    border: 1px solid aqua;
 }
 
 .results-text h5 {
@@ -172,27 +166,14 @@ header {
     text-align: center;
 }
 
-/* .buttonContainer {
-
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    background-color: aqua;
-    border: 2px solid green;
-    align-content: flex-end;
-
-} */
-
 .copy-button {
     margin: auto auto 32px auto;
 }
-/*ok*/
+
 #forCopyButton {
     display: flex;
     min-height: 20px;
     width: 100%;
-    border: 1px solid red;
     visibility: hidden;
 }
 
@@ -200,9 +181,20 @@ header {
     color: #343A40;
     font-weight: 700;
     font-size: 32px;
+    max-height: 300px;
     line-height: 120%;
     text-align: center;
     border: none;
     word-wrap: break-word;
 }
 
+.copyright{
+    color: #495057;
+    margin: 16px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footer {
+    height: 40px;
+}

@@ -65,24 +65,26 @@ function showInstruction(){
     }          
 }
 
-
-
-
-
-
-
-
 //tengo que tener los procesos que va a hacer la aplicación; a saber:
 
 //hay un boton que dispara la codificación y otras cuestiones
+
+
 //Botón Encriptar
 let buttonEnc = document.getElementById('btEnc');
 buttonEnc.addEventListener('click', ()=>{
-    let input = readText(userInputArea.id) //lee el texto
-    let out = code(input); //lo codifica
-    showCopy = true; //cambio el flag para mostrar
-    mostrarOcultar() // muestra el boton;
-    bringOnText(out);      
+    if(userInputArea.value === "" || toErase.length !== 0){
+
+    } else {
+        
+        let input = readText(userInputArea.id) //lee el texto
+        let out = code(input); //lo codifica
+        showCopy = true; //cambio el flag para mostrar
+        mostrarOcultar() // muestra el boton;
+        bringOnText(out); 
+        encriptFlag = true;
+        copiado = false;
+    }
 })
 
 
@@ -131,11 +133,9 @@ function bringOnText(string){
 let copyButton = document.getElementById('copyButton');
 
 copyButton.addEventListener('click', function(){
-    //copio y pego el texto codificado en el input; listo para decodificar
-    
+    //copio y pego el texto codificado en el input; listo para decodificar    
     copyToClipboard();
     pasteToInputArea()
-
 });
 
 //funcion copiar (y pegar)
@@ -143,10 +143,16 @@ copyButton.addEventListener('click', function(){
 //necesito el div donde se muestra el texto cifrado
 let textToCopy = document.getElementsByClassName('forOutputText');
 
+//flag de boton copiar
+// lo uso para que no se pueda desencriptar sin copiar despues de encriptar
+
+let copiado = true;
+
 // pseudo-Copy
 function copyToClipboard(){
     let text = textToCopy[0].textContent;
-    portapapeles = text;           
+    portapapeles = text; 
+    copiado = true;          
 }
 
 //pseudo-Paste
@@ -159,23 +165,42 @@ function pasteToInputArea(){
         alert('No hay nada para copiar');
     }
 }
-//necesito limpiar el area que muestra el texto codificado
+//limpia el area de resultados
+//quita el texto anterior
+
+let toErase = document.getElementsByClassName('forOutputText'); //esto lo pongo fuera de la funcion para ver si funciona y para usarlo en otro lado
+
 function clearOut(){
-    console.log('Limpio la salida, y la salida es');
-    let toErase = document.getElementsByClassName('forOutputText');
+    
     toErase[0].innerHTML = "";
 }
+
+//No desencripta si no encripté primero;
+//Esto lo soluciono dandole un segundo camino al desencriptar:
+
+let encriptFlag = false;
+//el boton encriptar cambia este flag
 
 //Boton desencriptar
 let buttonDec = document.getElementById('btDec');
 buttonDec.addEventListener('click', ()=>{
-    clearOut();
-    let input = readText(userInputArea.id) //lee el texto
-    let out = deCode(input); //lo codifica
-    showCopy = false; //cambio el flag para mostrar
-    mostrarOcultar() // oculta el boton;
-    //y lo muestra en el lugar que corresponde
-    bringOnText(out);      
+    if(userInputArea.value !== "" && toErase.length === 0 || encriptFlag === true && copiado === true){
+        if(encriptFlag === true){
+            clearOut();
+            let input = readText(userInputArea.id) //lee el texto
+            let out = deCode(input); //lo decodifica
+            showCopy = true; //cambio el flag para mostrar
+            mostrarOcultar() // oculta el boton;
+            //muestra el texto
+            bringOnText(out); 
+            encriptFlag = false;
+        } else {
+            let input = readText(userInputArea.id) //lee el texto
+            let out = deCode(input); //lo decodifica
+            mostrarOcultar()
+            bringOnText(out);
+        }   
+    }    
 })
 
 //lo decodifica
